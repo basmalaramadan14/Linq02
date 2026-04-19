@@ -7,18 +7,19 @@ namespace Linq02
         static void Main(string[] args)
         {
             #region Q01
-            var result = Source.ProductList
-    .OrderByDescending(p => p.UnitPrice)
-    .Take(3);
+            //        var result = Source.ProductList
+            //.OrderByDescending(p => p.UnitPrice)
+            //.Take(3);
 
-            foreach (var p in result)
-            {
-                Console.WriteLine($"{p.ProductName} - {p.UnitPrice}");
-            }
+            //        foreach (var p in result)
+            //        {
+            //            Console.WriteLine($"{p.ProductName} - {p.UnitPrice}");
+            //        }
             #endregion
 
 
             #region Q02
+            
             #endregion
 
             #region Q03

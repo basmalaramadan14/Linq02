@@ -19,7 +19,17 @@ namespace Linq02
 
 
             #region Q02
-            
+            int pageSize = 5;
+            int pageNumber = 2;
+
+            var result = Source.ProductList
+                .Skip((pageNumber - 1) * pageSize)
+                .Take(pageSize);
+
+            foreach (var p in result)
+            {
+                Console.WriteLine($"{p.ProductName}");
+            }
             #endregion
 
             #region Q03

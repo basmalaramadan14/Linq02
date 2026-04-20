@@ -147,19 +147,24 @@ namespace Linq02
             //}
             #endregion
             #region Q14
-            string[] list1 = { "Germany", "France", "UK", "Spain" };
-            string[] list2 = { "france", "SPAIN", "Italy" };
+            //string[] list1 = { "Germany", "France", "UK", "Spain" };
+            //string[] list2 = { "france", "SPAIN", "Italy" };
 
-            var result = list1
-                .Except(list2, StringComparer.OrdinalIgnoreCase);
+            //var result = list1
+            //    .Except(list2, StringComparer.OrdinalIgnoreCase);
 
-            foreach (var country in result)
-            {
-                Console.WriteLine(country);
-            }
+            //foreach (var country in result)
+            //{
+            //    Console.WriteLine(country);
+            //}
             #endregion
             #region Q15
+            var dict = Source.ProductList
+           .ToDictionary(p => p.ProductID);
 
+            var product = dict[18];
+
+            Console.WriteLine($"{product.ProductName} - {product.UnitPrice}");
             #endregion
             #region Q16
 

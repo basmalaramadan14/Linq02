@@ -87,17 +87,31 @@ namespace Linq02
             //}
             #endregion
             #region Q08
-            var result = Source.ProductList
-    .GroupBy(p => p.Category)
-    .Where(g => g.Count() > 3)
-    .Select(g => g.Key);
+            //        var result = Source.ProductList
+            //.GroupBy(p => p.Category)
+            //.Where(g => g.Count() > 3)
+            //.Select(g => g.Key);
 
-            foreach (var category in result)
-            {
-                Console.WriteLine(category);
-            }
+            //        foreach (var category in result)
+            //        {
+            //    Console.WriteLine(category);
+            //}
             #endregion
             #region Q09
+            var result =
+    from c in Source.CustomerList
+    group c by c.Country into g
+    select new
+    {
+        Country = g.Key,
+        Count = g.Count(),
+        TotalOrderValue = g.SelectMany(c => c.Orders).Sum(o => o.Total)
+    };
+
+            foreach (var item in result)
+            {
+                Console.WriteLine($"{item.Country} - {item.Count} - {item.TotalOrderValue}");
+            }
             #endregion
             #region Q10
             #endregion

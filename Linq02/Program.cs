@@ -68,25 +68,34 @@ namespace Linq02
             //        }
             #endregion
             #region Q07 
-            var result = Source.ProductList
-    .GroupBy(p => p.Category)
-    .Select(g => new
-    {
-        Category = g.Key,
-        Products = g.Select(p => p.ProductName)
-    });
+            //        var result = Source.ProductList
+            //.GroupBy(p => p.Category)
+            //.Select(g => new
+            //{
+            //    Category = g.Key,
+            //    Products = g.Select(p => p.ProductName)
+            //});
 
-            foreach (var group in result)
-            {
-                Console.WriteLine(group.Category);
+            //        foreach (var group in result)
+            //{
+            //    Console.WriteLine(group.Category);
 
-                foreach (var name in group.Products)
-                {
-                    Console.WriteLine($"{name}");
-                }
-            }
+            //    foreach (var name in group.Products)
+            //    {
+            //        Console.WriteLine($"{name}");
+            //    }
+            //}
             #endregion
             #region Q08
+            var result = Source.ProductList
+    .GroupBy(p => p.Category)
+    .Where(g => g.Count() > 3)
+    .Select(g => g.Key);
+
+            foreach (var category in result)
+            {
+                Console.WriteLine(category);
+            }
             #endregion
             #region Q09
             #endregion

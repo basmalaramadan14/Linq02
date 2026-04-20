@@ -220,7 +220,14 @@ namespace Linq02
             }
             #endregion
             #region Q21
+            var result = Source.ProductList
+    .Zip(Source.CustomerList,
+        (p, c) => $"{p.ProductName} sold to {c.CompanyName}");
 
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
             #endregion
         }
     }

@@ -59,15 +59,32 @@ namespace Linq02
             //Console.WriteLine(contains9);
             #endregion
             #region Q06
+            //        var result = Source.ProductList
+            //.GroupBy(p => p.Category);
+
+            //        foreach (var group in result)
+            //        {
+            //            Console.WriteLine($"{group.Key} - {group.Count()}");
+            //        }
+            #endregion
+            #region Q07 
             var result = Source.ProductList
-    .GroupBy(p => p.Category);
+    .GroupBy(p => p.Category)
+    .Select(g => new
+    {
+        Category = g.Key,
+        Products = g.Select(p => p.ProductName)
+    });
 
             foreach (var group in result)
             {
-                Console.WriteLine($"{group.Key} - {group.Count()}");
+                Console.WriteLine(group.Category);
+
+                foreach (var name in group.Products)
+                {
+                    Console.WriteLine($"{name}");
+                }
             }
-            #endregion
-            #region Q07
             #endregion
             #region Q08
             #endregion

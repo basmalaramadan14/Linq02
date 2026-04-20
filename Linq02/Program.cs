@@ -33,17 +33,22 @@ namespace Linq02
             #endregion
 
             #region Q03
-            var result = Source.ProductList
-    .OrderBy(p => p.UnitPrice)
-    .TakeWhile(p => p.UnitPrice < 25);
+            //        var result = Source.ProductList
+            //.OrderBy(p => p.UnitPrice)
+            //.TakeWhile(p => p.UnitPrice < 25);
 
-            foreach (var p in result)
-            {
-                Console.WriteLine($"{p.ProductName} - {p.UnitPrice}");
-            }
+            //        foreach (var p in result)
+            //        {
+            //            Console.WriteLine($"{p.ProductName} - {p.UnitPrice}");
+            //        }
             #endregion
 
             #region Q04
+            bool allInStock = Source.ProductList
+    .Where(p => p.Category == "Seafood")
+    .All(p => p.UnitsInStock > 0);
+
+            Console.WriteLine(allInStock);
             #endregion
 
             #region Q05

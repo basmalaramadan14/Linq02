@@ -126,6 +126,14 @@ namespace Linq02
             Console.WriteLine($"Most Expensive: {mostExpensive}");
             #endregion
             #region Q12
+            var categories = Source.ProductList
+    .Select(p => p.Category)
+    .Distinct();
+
+            foreach (var c in categories)
+            {
+                Console.WriteLine(c);
+            }
             #endregion
             #region Q13
             #endregion

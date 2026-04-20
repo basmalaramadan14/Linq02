@@ -126,16 +126,25 @@ namespace Linq02
             Console.WriteLine($"Most Expensive: {mostExpensive}");
             #endregion
             #region Q12
-            var categories = Source.ProductList
-    .Select(p => p.Category)
-    .Distinct();
+            //        var categories = Source.ProductList
+            //.Select(p => p.Category)
+            //.Distinct();
 
-            foreach (var c in categories)
-            {
-                Console.WriteLine(c);
-            }
+            //        foreach (var c in categories)
+            //        {
+            //            Console.WriteLine(c);
+            //        }
             #endregion
             #region Q13
+            int[] setA = { 1, 3, 5, 7, 9, 11, 13 };
+            int[] setB = { 3, 6, 9, 12, 15, 13 };
+
+            var result = setA.Except(setB);
+
+            foreach (var x in result)
+            {
+                Console.WriteLine(x);
+            }
             #endregion
         }
     }

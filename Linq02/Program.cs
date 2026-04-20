@@ -167,13 +167,23 @@ namespace Linq02
             // Console.WriteLine($"{product.ProductName} - {product.UnitPrice}");
             #endregion
             #region Q16
-            var product = Source.ProductList
-            .First(p => p.UnitPrice > 50);
+            //var product = Source.ProductList
+            //.First(p => p.UnitPrice > 50);
 
-            Console.WriteLine(product.ProductName);
+            //Console.WriteLine(product.ProductName);
             #endregion
             #region Q17
+            var product = Source.ProductList
+    .FirstOrDefault(p => p.UnitPrice > 500);
 
+            if (product != null)
+            {
+                Console.WriteLine(product.ProductName);
+            }
+            else
+            {
+                Console.WriteLine("No product found");
+            }
             #endregion
             #region Q18
 

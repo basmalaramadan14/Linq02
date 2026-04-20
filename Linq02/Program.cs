@@ -98,22 +98,25 @@ namespace Linq02
             //}
             #endregion
             #region Q09
-            var result =
-    from c in Source.CustomerList
-    group c by c.Country into g
-    select new
-    {
-        Country = g.Key,
-        Count = g.Count(),
-        TotalOrderValue = g.SelectMany(c => c.Orders).Sum(o => o.Total)
-    };
+            //        var result =
+            //from c in Source.CustomerList
+            //group c by c.Country into g
+            //select new
+            //{
+            //    Country = g.Key,
+            //    Count = g.Count(),
+            //    TotalOrderValue = g.SelectMany(c => c.Orders).Sum(o => o.Total)
+            //};
 
-            foreach (var item in result)
-            {
-                Console.WriteLine($"{item.Country} - {item.Count} - {item.TotalOrderValue}");
-            }
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine($"{item.Country} - {item.Count} - {item.TotalOrderValue}");
+            //}
             #endregion
             #region Q10
+            int totalUnits = Source.ProductList
+            .Sum(p => p.UnitsInStock);
+            Console.WriteLine(totalUnits);
             #endregion
             #region Q11
             #endregion

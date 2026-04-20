@@ -159,15 +159,18 @@ namespace Linq02
             //}
             #endregion
             #region Q15
-            var dict = Source.ProductList
-           .ToDictionary(p => p.ProductID);
+            // var dict = Source.ProductList
+            //.ToDictionary(p => p.ProductID);
 
-            var product = dict[18];
+            // var product = dict[18];
 
-            Console.WriteLine($"{product.ProductName} - {product.UnitPrice}");
+            // Console.WriteLine($"{product.ProductName} - {product.UnitPrice}");
             #endregion
             #region Q16
+            var product = Source.ProductList
+            .First(p => p.UnitPrice > 50);
 
+            Console.WriteLine(product.ProductName);
             #endregion
             #region Q17
 

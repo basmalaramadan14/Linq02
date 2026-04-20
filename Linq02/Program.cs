@@ -195,16 +195,29 @@ namespace Linq02
             //}
             #endregion
             #region Q19
-            var evens = Enumerable.Range(1, 30)
-               .Where(n => n % 2 == 0);
+            //var evens = Enumerable.Range(1, 30)
+            //   .Where(n => n % 2 == 0);
 
-            foreach (var n in evens)
-            {
-                Console.WriteLine(n);
-            }
+            //foreach (var n in evens)
+            //{
+            //    Console.WriteLine(n);
+            //}
             #endregion
             #region Q20
+            var products = Source.ProductList
+              .Select(p => p.ProductName)
+          .Take(3);
 
+            var customers = Source.CustomerList
+                .Select(c => c.CompanyName)
+            .Take(3);
+
+            var result = products.Concat(customers);
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
             #endregion
             #region Q21
 

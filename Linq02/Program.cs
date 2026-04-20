@@ -186,16 +186,22 @@ namespace Linq02
             //        }
             #endregion
             #region Q18
-            var result = Enumerable.Range(1, 10)
-            .Select(n => 7 * n);
+            //var result = Enumerable.Range(1, 10)
+            //.Select(n => 7 * n);
 
-            foreach (var x in result)
-            {
-                Console.WriteLine(x);
-            }
+            //foreach (var x in result)
+            //{
+            //    Console.WriteLine(x);
+            //}
             #endregion
             #region Q19
+            var evens = Enumerable.Range(1, 30)
+               .Where(n => n % 2 == 0);
 
+            foreach (var n in evens)
+            {
+                Console.WriteLine(n);
+            }
             #endregion
             #region Q20
 

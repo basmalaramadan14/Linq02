@@ -19,21 +19,28 @@ namespace Linq02
 
 
             #region Q02
-            int pageSize = 5;
-            int pageNumber = 2;
+            //int pageSize = 5;
+            //int pageNumber = 2;
 
-            var result = Source.ProductList
-                .Skip((pageNumber - 1) * pageSize)
-                .Take(pageSize);
+            //var result = Source.ProductList
+            //    .Skip((pageNumber - 1) * pageSize)
+            //    .Take(pageSize);
 
-            foreach (var p in result)
-            {
-                Console.WriteLine($"{p.ProductName}");
-            }
+            //foreach (var p in result)
+            //{
+            //    Console.WriteLine($"{p.ProductName}");
+            //}
             #endregion
 
             #region Q03
+            var result = Source.ProductList
+    .OrderBy(p => p.UnitPrice)
+    .TakeWhile(p => p.UnitPrice < 25);
 
+            foreach (var p in result)
+            {
+                Console.WriteLine($"{p.ProductName} - {p.UnitPrice}");
+            }
             #endregion
 
             #region Q04

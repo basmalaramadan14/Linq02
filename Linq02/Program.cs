@@ -173,20 +173,26 @@ namespace Linq02
             //Console.WriteLine(product.ProductName);
             #endregion
             #region Q17
-            var product = Source.ProductList
-    .FirstOrDefault(p => p.UnitPrice > 500);
+            //        var product = Source.ProductList
+            //.FirstOrDefault(p => p.UnitPrice > 500);
 
-            if (product != null)
-            {
-                Console.WriteLine(product.ProductName);
-            }
-            else
-            {
-                Console.WriteLine("No product found");
-            }
+            //        if (product != null)
+            //        {
+            //            Console.WriteLine(product.ProductName);
+            //        }
+            //        else
+            //        {
+            //            Console.WriteLine("No product found");
+            //        }
             #endregion
             #region Q18
+            var result = Enumerable.Range(1, 10)
+            .Select(n => 7 * n);
 
+            foreach (var x in result)
+            {
+                Console.WriteLine(x);
+            }
             #endregion
             #region Q19
 

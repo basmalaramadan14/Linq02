@@ -114,11 +114,16 @@ namespace Linq02
             //}
             #endregion
             #region Q10
-            int totalUnits = Source.ProductList
-            .Sum(p => p.UnitsInStock);
-            Console.WriteLine(totalUnits);
+            //int totalUnits = Source.ProductList
+            //.Sum(p => p.UnitsInStock);
+            //Console.WriteLine(totalUnits);
             #endregion
             #region Q11
+            var cheapest = Source.ProductList.Min(p => p.UnitPrice);
+            var mostExpensive = Source.ProductList.Max(p => p.UnitPrice);
+
+            Console.WriteLine($"Cheapest: {cheapest}");
+            Console.WriteLine($"Most Expensive: {mostExpensive}");
             #endregion
             #region Q12
             #endregion
